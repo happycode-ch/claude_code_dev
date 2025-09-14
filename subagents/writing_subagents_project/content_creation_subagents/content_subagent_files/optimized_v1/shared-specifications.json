@@ -1,0 +1,128 @@
+{
+  "content_pipeline": {
+    "article_structure": {
+      "introduction": {
+        "components": ["hook", "context", "thesis"],
+        "word_count_target": 150
+      },
+      "body_sections": {
+        "min": 3,
+        "max": 7,
+        "per_section_words": 300
+      },
+      "conclusion": {
+        "components": ["summary", "key_takeaways", "cta"],
+        "word_count_target": 150
+      }
+    },
+    "quality_metrics": {
+      "readability": {
+        "grade_level": "8-12",
+        "sentence_length_avg": 15,
+        "paragraph_length_avg": 100
+      },
+      "seo": {
+        "keyword_density": "2-3%",
+        "meta_description_length": 155,
+        "title_length": 60
+      }
+    },
+    "brand_voice": {
+      "professional": {
+        "tone": "authoritative yet approachable",
+        "vocabulary": "industry-standard terms",
+        "perspective": "third-person or inclusive first-person plural"
+      },
+      "technical": {
+        "tone": "precise and educational",
+        "vocabulary": "technical terms with explanations",
+        "perspective": "second-person instructional"
+      }
+    }
+  },
+  "social_media_specs": {
+    "twitter": {
+      "thread": {
+        "min_tweets": 5,
+        "max_tweets": 7,
+        "char_limit": 280,
+        "media_attachments": 4
+      },
+      "best_practices": {
+        "hook_types": ["question", "statistic", "controversial_statement"],
+        "engagement_elements": ["polls", "questions", "emojis_sparse"],
+        "hashtag_count": "2-3"
+      }
+    },
+    "linkedin": {
+      "post": {
+        "optimal_length": 1300,
+        "max_length": 3000,
+        "line_breaks": "every 2-3 sentences"
+      },
+      "formatting": {
+        "structure": ["hook", "story", "lesson", "application", "cta"],
+        "bullet_points": "3-5 key insights",
+        "hashtag_count": "3-5"
+      }
+    }
+  },
+  "visual_specifications": {
+    "hero_images": {
+      "blog": {"width": 1200, "height": 630, "format": "jpg"},
+      "social": {"width": 1200, "height": 675, "format": "jpg"}
+    },
+    "platform_dimensions": {
+      "twitter": {
+        "post": "1200x675",
+        "header": "1500x500"
+      },
+      "linkedin": {
+        "post": "1200x627",
+        "article": "1280x1920"
+      },
+      "instagram": {
+        "square": "1080x1080",
+        "story": "1080x1920"
+      }
+    }
+  },
+  "performance_benchmarks": {
+    "engagement_targets": {
+      "blog": {
+        "time_on_page": "3-5 minutes",
+        "bounce_rate": "<40%",
+        "share_rate": ">5%"
+      },
+      "social": {
+        "engagement_rate": ">3%",
+        "click_through_rate": ">1%",
+        "share_rate": ">2%"
+      }
+    },
+    "content_velocity": {
+      "research": "1-2 hours",
+      "writing": "2-3 hours",
+      "editing": "30-45 minutes",
+      "social_atomization": "15 minutes"
+    }
+  },
+  "workflow_states": {
+    "pipeline_stages": [
+      "research",
+      "strategy",
+      "writing",
+      "editing",
+      "visual_creation",
+      "social_atomization",
+      "publishing",
+      "performance_tracking"
+    ],
+    "handoff_requirements": {
+      "research_to_strategy": ["sources", "key_findings", "opportunities"],
+      "strategy_to_writing": ["specification", "structure", "keywords"],
+      "writing_to_editing": ["draft", "sources", "metadata"],
+      "editing_to_social": ["final_content", "key_points", "quotes"]
+    }
+  }
+}
