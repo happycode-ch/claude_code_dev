@@ -1,0 +1,195 @@
+{
+  "fixtures": {
+    "keyword-researcher": [
+      {
+        "test_name": "valid_blog_research",
+        "input": {
+          "topic": "AI automation tools",
+          "target_audience": "content creators",
+          "content_type": "blog"
+        },
+        "expected_output": {
+          "primary_keyword": "AI content tools",
+          "long_tail": ["AI writing assistants", "automated content creation", "AI tools for bloggers"],
+          "search_volume": "high",
+          "difficulty": "medium"
+        }
+      },
+      {
+        "test_name": "technical_tutorial",
+        "input": {
+          "topic": "Python web scraping",
+          "target_audience": "developers",
+          "content_type": "tutorial"
+        },
+        "expected_output": {
+          "primary_keyword": "Python web scraping tutorial",
+          "long_tail": ["BeautifulSoup tutorial", "Python scraping examples", "web scraping with requests"],
+          "search_volume": "medium",
+          "difficulty": "easy"
+        }
+      },
+      {
+        "test_name": "edge_case_minimal",
+        "input": {
+          "topic": "AI",
+          "target_audience": "general",
+          "content_type": "news"
+        },
+        "expected_output": {
+          "primary_keyword": "AI news",
+          "long_tail": ["artificial intelligence updates", "AI technology news", "latest AI developments"],
+          "search_volume": "high",
+          "difficulty": "hard"
+        }
+      }
+    ],
+    "topic-scout": [
+      {
+        "test_name": "valid_niche_trending",
+        "input": {
+          "niche": "AI content tools",
+          "recent_performance": "tutorials +40%, news +25%"
+        },
+        "expected_output": {
+          "trending_topics": ["ChatGPT plugins", "Claude Code automation", "AI image generation"],
+          "content_gaps": ["integration guides", "cost comparisons", "workflow automation"],
+          "opportunities": ["video tutorials", "case studies", "tool comparisons"]
+        }
+      },
+      {
+        "test_name": "competitive_analysis",
+        "input": {
+          "niche": "developer tools",
+          "recent_performance": "API guides -10%, tutorials +50%"
+        },
+        "expected_output": {
+          "trending_topics": ["GitHub Copilot", "VS Code extensions", "CI/CD pipelines"],
+          "content_gaps": ["beginner tutorials", "troubleshooting guides"],
+          "opportunities": ["hands-on tutorials", "video content"]
+        }
+      }
+    ],
+    "source-gatherer": [
+      {
+        "test_name": "comprehensive_research",
+        "input": {
+          "topic": "AI automation for content creators",
+          "angle": "solo creators and small teams"
+        },
+        "expected_output": {
+          "sources": [
+            "https://openai.com/blog",
+            "https://www.anthropic.com/news",
+            "TechCrunch AI section",
+            "Wired AI coverage",
+            "MIT Technology Review"
+          ],
+          "key_points": [
+            "Cost efficiency for solo creators",
+            "Workflow automation benefits",
+            "Tool integration strategies"
+          ]
+        }
+      }
+    ],
+    "body-writer": [
+      {
+        "test_name": "blog_section_writing",
+        "input": {
+          "outline": ["Introduction", "Benefits of AI Tools", "Top 5 Tools", "Implementation Guide", "Conclusion"],
+          "sections": ["Benefits of AI Tools", "Top 5 Tools"]
+        },
+        "expected_output": {
+          "body_content": "## Benefits of AI Tools\n\nContent creators today face unprecedented challenges in maintaining consistent output while ensuring quality. AI automation tools have emerged as game-changers...\n\n## Top 5 Tools\n\n1. **Claude Code** - Advanced coding assistant...\n2. **GPT-4** - Versatile content generation...",
+          "sections_written": ["Benefits of AI Tools", "Top 5 Tools"]
+        }
+      }
+    ],
+    "grammar-checker": [
+      {
+        "test_name": "error_detection",
+        "input": {
+          "content": "Their are many benefit's to using AI tool's for content creation. Its important too understand how they works."
+        },
+        "expected_output": {
+          "corrected_content": "There are many benefits to using AI tools for content creation. It's important to understand how they work.",
+          "errors_found": ["Their→There", "benefit's→benefits", "tool's→tools", "Its→It's", "too→to", "works→work"]
+        }
+      }
+    ],
+    "content-atomizer": [
+      {
+        "test_name": "extract_key_points",
+        "input": {
+          "content": "AI automation tools are revolutionizing content creation. They save time by automating repetitive tasks. Quality remains high through smart algorithms. Costs are reduced significantly. Integration is seamless with existing workflows."
+        },
+        "expected_output": {
+          "key_points": [
+            "AI tools revolutionize content creation",
+            "Time savings through automation",
+            "Quality maintained via algorithms",
+            "Significant cost reduction",
+            "Seamless workflow integration"
+          ],
+          "snippets": [
+            "AI automation revolutionizes content",
+            "Save time, maintain quality",
+            "Reduce costs with smart automation"
+          ]
+        }
+      }
+    ],
+    "twitter-formatter": [
+      {
+        "test_name": "thread_creation",
+        "input": {
+          "content": "AI tools are transforming how we create content. They offer speed, consistency, and scale.",
+          "key_points": ["Speed increase", "Consistency", "Scalability"]
+        },
+        "expected_output": {
+          "thread": [
+            "🚀 AI is revolutionizing content creation. Here's what you need to know:",
+            "1/ Speed: Create content 10x faster with AI assistance",
+            "2/ Consistency: Maintain brand voice across all content",
+            "3/ Scale: Produce more without sacrificing quality"
+          ],
+          "tweets": ["🚀 AI is revolutionizing content creation", "Create content 10x faster with AI", "Scale your content without limits"]
+        }
+      }
+    ]
+  },
+  "edge_cases": {
+    "empty_input": {
+      "input": {},
+      "expected_error": "Required fields missing"
+    },
+    "invalid_type": {
+      "input": {
+        "topic": 123,
+        "target_audience": null
+      },
+      "expected_error": "Invalid data type"
+    },
+    "oversized_input": {
+      "input": {
+        "content": "[REPEAT 100000 TIMES: Lorem ipsum]"
+      },
+      "expected_error": "Input exceeds maximum length"
+    }
+  },
+  "performance_benchmarks": {
+    "keyword-researcher": {
+      "max_execution_time": 5000,
+      "max_tokens": 500
+    },
+    "body-writer": {
+      "max_execution_time": 15000,
+      "max_tokens": 2000
+    },
+    "grammar-checker": {
+      "max_execution_time": 3000,
+      "max_tokens": 1000
+    }
+  }
+}

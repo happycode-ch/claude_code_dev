@@ -1,0 +1,477 @@
+{
+  "summary": {
+    "total_tests": 42,
+    "passed": 20,
+    "failed": 22,
+    "errors": 0,
+    "success_rate": 47.61904761904761,
+    "total_execution_time": 0.00011658668518066406,
+    "total_tokens_used": 1877,
+    "timestamp": "2025-09-14T22:38:53.167972"
+  },
+  "agent_results": {
+    "keyword-researcher": {
+      "total": 15,
+      "passed": 10,
+      "failed": 5,
+      "errors": 0,
+      "tests": [
+        {
+          "test_name": "valid_blog_research",
+          "status": "pass",
+          "execution_time": 1.4781951904296875e-05,
+          "tokens_used": 55,
+          "error": null
+        },
+        {
+          "test_name": "technical_tutorial",
+          "status": "pass",
+          "execution_time": 7.152557373046875e-06,
+          "tokens_used": 55,
+          "error": null
+        },
+        {
+          "test_name": "edge_case_minimal",
+          "status": "fail",
+          "execution_time": 0,
+          "tokens_used": 0,
+          "error": "Input validation failed"
+        },
+        {
+          "test_name": "valid_blog_research",
+          "status": "pass",
+          "execution_time": 4.76837158203125e-06,
+          "tokens_used": 55,
+          "error": null
+        },
+        {
+          "test_name": "technical_tutorial",
+          "status": "pass",
+          "execution_time": 3.5762786865234375e-06,
+          "tokens_used": 55,
+          "error": null
+        },
+        {
+          "test_name": "edge_case_minimal",
+          "status": "fail",
+          "execution_time": 0,
+          "tokens_used": 0,
+          "error": "Input validation failed"
+        },
+        {
+          "test_name": "valid_blog_research",
+          "status": "pass",
+          "execution_time": 3.814697265625e-06,
+          "tokens_used": 55,
+          "error": null
+        },
+        {
+          "test_name": "technical_tutorial",
+          "status": "pass",
+          "execution_time": 2.86102294921875e-06,
+          "tokens_used": 55,
+          "error": null
+        },
+        {
+          "test_name": "edge_case_minimal",
+          "status": "fail",
+          "execution_time": 0,
+          "tokens_used": 0,
+          "error": "Input validation failed"
+        },
+        {
+          "test_name": "valid_blog_research",
+          "status": "pass",
+          "execution_time": 4.0531158447265625e-06,
+          "tokens_used": 55,
+          "error": null
+        },
+        {
+          "test_name": "technical_tutorial",
+          "status": "pass",
+          "execution_time": 3.337860107421875e-06,
+          "tokens_used": 55,
+          "error": null
+        },
+        {
+          "test_name": "edge_case_minimal",
+          "status": "fail",
+          "execution_time": 0,
+          "tokens_used": 0,
+          "error": "Input validation failed"
+        },
+        {
+          "test_name": "valid_blog_research",
+          "status": "pass",
+          "execution_time": 4.0531158447265625e-06,
+          "tokens_used": 55,
+          "error": null
+        },
+        {
+          "test_name": "technical_tutorial",
+          "status": "pass",
+          "execution_time": 3.337860107421875e-06,
+          "tokens_used": 55,
+          "error": null
+        },
+        {
+          "test_name": "edge_case_minimal",
+          "status": "fail",
+          "execution_time": 0,
+          "tokens_used": 0,
+          "error": "Input validation failed"
+        }
+      ]
+    },
+    "topic-scout": {
+      "total": 10,
+      "passed": 10,
+      "failed": 0,
+      "errors": 0,
+      "tests": [
+        {
+          "test_name": "valid_niche_trending",
+          "status": "pass",
+          "execution_time": 5.245208740234375e-06,
+          "tokens_used": 50,
+          "error": null
+        },
+        {
+          "test_name": "competitive_analysis",
+          "status": "pass",
+          "execution_time": 3.814697265625e-06,
+          "tokens_used": 51,
+          "error": null
+        },
+        {
+          "test_name": "valid_niche_trending",
+          "status": "pass",
+          "execution_time": 3.5762786865234375e-06,
+          "tokens_used": 50,
+          "error": null
+        },
+        {
+          "test_name": "competitive_analysis",
+          "status": "pass",
+          "execution_time": 3.0994415283203125e-06,
+          "tokens_used": 51,
+          "error": null
+        },
+        {
+          "test_name": "valid_niche_trending",
+          "status": "pass",
+          "execution_time": 2.6226043701171875e-06,
+          "tokens_used": 50,
+          "error": null
+        },
+        {
+          "test_name": "competitive_analysis",
+          "status": "pass",
+          "execution_time": 2.6226043701171875e-06,
+          "tokens_used": 51,
+          "error": null
+        },
+        {
+          "test_name": "valid_niche_trending",
+          "status": "pass",
+          "execution_time": 3.337860107421875e-06,
+          "tokens_used": 50,
+          "error": null
+        },
+        {
+          "test_name": "competitive_analysis",
+          "status": "pass",
+          "execution_time": 2.86102294921875e-06,
+          "tokens_used": 51,
+          "error": null
+        },
+        {
+          "test_name": "valid_niche_trending",
+          "status": "pass",
+          "execution_time": 2.6226043701171875e-06,
+          "tokens_used": 50,
+          "error": null
+        },
+        {
+          "test_name": "competitive_analysis",
+          "status": "pass",
+          "execution_time": 2.86102294921875e-06,
+          "tokens_used": 51,
+          "error": null
+        }
+      ]
+    },
+    "source-gatherer": {
+      "total": 5,
+      "passed": 0,
+      "failed": 5,
+      "errors": 0,
+      "tests": [
+        {
+          "test_name": "comprehensive_research",
+          "status": "fail",
+          "execution_time": 3.0994415283203125e-06,
+          "tokens_used": 33,
+          "error": "Validation: ['Missing required field: sources']"
+        },
+        {
+          "test_name": "comprehensive_research",
+          "status": "fail",
+          "execution_time": 2.384185791015625e-06,
+          "tokens_used": 33,
+          "error": "Validation: ['Missing required field: sources']"
+        },
+        {
+          "test_name": "comprehensive_research",
+          "status": "fail",
+          "execution_time": 1.6689300537109375e-06,
+          "tokens_used": 33,
+          "error": "Validation: ['Missing required field: sources']"
+        },
+        {
+          "test_name": "comprehensive_research",
+          "status": "fail",
+          "execution_time": 1.6689300537109375e-06,
+          "tokens_used": 33,
+          "error": "Validation: ['Missing required field: sources']"
+        },
+        {
+          "test_name": "comprehensive_research",
+          "status": "fail",
+          "execution_time": 1.6689300537109375e-06,
+          "tokens_used": 33,
+          "error": "Validation: ['Missing required field: sources']"
+        }
+      ]
+    },
+    "grammar-checker": {
+      "total": 3,
+      "passed": 0,
+      "failed": 3,
+      "errors": 0,
+      "tests": [
+        {
+          "test_name": "error_detection",
+          "status": "fail",
+          "execution_time": 2.1457672119140625e-06,
+          "tokens_used": 42,
+          "error": "Validation: ['Missing required field: corrected_content']"
+        },
+        {
+          "test_name": "error_detection",
+          "status": "fail",
+          "execution_time": 1.6689300537109375e-06,
+          "tokens_used": 42,
+          "error": "Validation: ['Missing required field: corrected_content']"
+        },
+        {
+          "test_name": "error_detection",
+          "status": "fail",
+          "execution_time": 1.6689300537109375e-06,
+          "tokens_used": 42,
+          "error": "Validation: ['Missing required field: corrected_content']"
+        }
+      ]
+    },
+    "body-writer": {
+      "total": 3,
+      "passed": 0,
+      "failed": 3,
+      "errors": 0,
+      "tests": [
+        {
+          "test_name": "blog_section_writing",
+          "status": "fail",
+          "execution_time": 2.384185791015625e-06,
+          "tokens_used": 51,
+          "error": "Validation: ['Missing required field: body_content']"
+        },
+        {
+          "test_name": "blog_section_writing",
+          "status": "fail",
+          "execution_time": 1.6689300537109375e-06,
+          "tokens_used": 51,
+          "error": "Validation: ['Missing required field: body_content']"
+        },
+        {
+          "test_name": "blog_section_writing",
+          "status": "fail",
+          "execution_time": 1.9073486328125e-06,
+          "tokens_used": 51,
+          "error": "Validation: ['Missing required field: body_content']"
+        }
+      ]
+    },
+    "content-atomizer": {
+      "total": 3,
+      "passed": 0,
+      "failed": 3,
+      "errors": 0,
+      "tests": [
+        {
+          "test_name": "extract_key_points",
+          "status": "fail",
+          "execution_time": 1.9073486328125e-06,
+          "tokens_used": 73,
+          "error": "Validation: ['Missing required field: key_points']"
+        },
+        {
+          "test_name": "extract_key_points",
+          "status": "fail",
+          "execution_time": 1.430511474609375e-06,
+          "tokens_used": 73,
+          "error": "Validation: ['Missing required field: key_points']"
+        },
+        {
+          "test_name": "extract_key_points",
+          "status": "fail",
+          "execution_time": 1.1920928955078125e-06,
+          "tokens_used": 73,
+          "error": "Validation: ['Missing required field: key_points']"
+        }
+      ]
+    },
+    "twitter-formatter": {
+      "total": 3,
+      "passed": 0,
+      "failed": 3,
+      "errors": 0,
+      "tests": [
+        {
+          "test_name": "thread_creation",
+          "status": "fail",
+          "execution_time": 2.6226043701171875e-06,
+          "tokens_used": 53,
+          "error": "Validation: ['Missing required field: thread']"
+        },
+        {
+          "test_name": "thread_creation",
+          "status": "fail",
+          "execution_time": 1.430511474609375e-06,
+          "tokens_used": 53,
+          "error": "Validation: ['Missing required field: thread']"
+        },
+        {
+          "test_name": "thread_creation",
+          "status": "fail",
+          "execution_time": 1.6689300537109375e-06,
+          "tokens_used": 53,
+          "error": "Validation: ['Missing required field: thread']"
+        }
+      ]
+    }
+  },
+  "failed_tests": [
+    {
+      "agent": "keyword-researcher",
+      "test": "edge_case_minimal",
+      "error": "Input validation failed"
+    },
+    {
+      "agent": "source-gatherer",
+      "test": "comprehensive_research",
+      "error": "Validation: ['Missing required field: sources']"
+    },
+    {
+      "agent": "source-gatherer",
+      "test": "comprehensive_research",
+      "error": "Validation: ['Missing required field: sources']"
+    },
+    {
+      "agent": "keyword-researcher",
+      "test": "edge_case_minimal",
+      "error": "Input validation failed"
+    },
+    {
+      "agent": "grammar-checker",
+      "test": "error_detection",
+      "error": "Validation: ['Missing required field: corrected_content']"
+    },
+    {
+      "agent": "source-gatherer",
+      "test": "comprehensive_research",
+      "error": "Validation: ['Missing required field: sources']"
+    },
+    {
+      "agent": "keyword-researcher",
+      "test": "edge_case_minimal",
+      "error": "Input validation failed"
+    },
+    {
+      "agent": "body-writer",
+      "test": "blog_section_writing",
+      "error": "Validation: ['Missing required field: body_content']"
+    },
+    {
+      "agent": "content-atomizer",
+      "test": "extract_key_points",
+      "error": "Validation: ['Missing required field: key_points']"
+    },
+    {
+      "agent": "twitter-formatter",
+      "test": "thread_creation",
+      "error": "Validation: ['Missing required field: thread']"
+    },
+    {
+      "agent": "source-gatherer",
+      "test": "comprehensive_research",
+      "error": "Validation: ['Missing required field: sources']"
+    },
+    {
+      "agent": "keyword-researcher",
+      "test": "edge_case_minimal",
+      "error": "Input validation failed"
+    },
+    {
+      "agent": "body-writer",
+      "test": "blog_section_writing",
+      "error": "Validation: ['Missing required field: body_content']"
+    },
+    {
+      "agent": "grammar-checker",
+      "test": "error_detection",
+      "error": "Validation: ['Missing required field: corrected_content']"
+    },
+    {
+      "agent": "content-atomizer",
+      "test": "extract_key_points",
+      "error": "Validation: ['Missing required field: key_points']"
+    },
+    {
+      "agent": "twitter-formatter",
+      "test": "thread_creation",
+      "error": "Validation: ['Missing required field: thread']"
+    },
+    {
+      "agent": "source-gatherer",
+      "test": "comprehensive_research",
+      "error": "Validation: ['Missing required field: sources']"
+    },
+    {
+      "agent": "keyword-researcher",
+      "test": "edge_case_minimal",
+      "error": "Input validation failed"
+    },
+    {
+      "agent": "body-writer",
+      "test": "blog_section_writing",
+      "error": "Validation: ['Missing required field: body_content']"
+    },
+    {
+      "agent": "grammar-checker",
+      "test": "error_detection",
+      "error": "Validation: ['Missing required field: corrected_content']"
+    },
+    {
+      "agent": "content-atomizer",
+      "test": "extract_key_points",
+      "error": "Validation: ['Missing required field: key_points']"
+    },
+    {
+      "agent": "twitter-formatter",
+      "test": "thread_creation",
+      "error": "Validation: ['Missing required field: thread']"
+    }
+  ],
+  "error_tests": []
+}

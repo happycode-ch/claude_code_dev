@@ -1,0 +1,751 @@
+{
+  "agent_validation": {
+    "keyword-researcher": {
+      "input_schema": {
+        "type": "object",
+        "required": ["topic", "target_audience", "content_type"],
+        "properties": {
+          "topic": {"type": "string", "minLength": 3},
+          "target_audience": {"type": "string"},
+          "content_type": {"enum": ["blog", "tutorial", "news", "technical"]}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["primary_keyword", "long_tail", "search_volume", "difficulty"],
+        "properties": {
+          "primary_keyword": {"type": "string"},
+          "long_tail": {"type": "array", "minItems": 3},
+          "search_volume": {"enum": ["high", "medium", "low"]},
+          "difficulty": {"enum": ["easy", "medium", "hard"]}
+        }
+      }
+    },
+    "topic-scout": {
+      "input_schema": {
+        "type": "object",
+        "required": ["niche", "recent_performance"],
+        "properties": {
+          "niche": {"type": "string"},
+          "recent_performance": {"type": "string"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["trending_topics", "content_gaps", "opportunities"],
+        "properties": {
+          "trending_topics": {"type": "array", "minItems": 3},
+          "content_gaps": {"type": "array"},
+          "opportunities": {"type": "array"}
+        }
+      }
+    },
+    "source-gatherer": {
+      "input_schema": {
+        "type": "object",
+        "required": ["topic", "angle"],
+        "properties": {
+          "topic": {"type": "string"},
+          "angle": {"type": "string"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["sources", "key_points"],
+        "properties": {
+          "sources": {"type": "array", "minItems": 5, "maxItems": 7},
+          "key_points": {"type": "array"}
+        }
+      }
+    },
+    "competitor-analyzer": {
+      "input_schema": {
+        "type": "object",
+        "required": ["topic", "competitors"],
+        "properties": {
+          "topic": {"type": "string"},
+          "competitors": {"type": "array"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["gaps", "differentiation", "strengths"],
+        "properties": {
+          "gaps": {"type": "array"},
+          "differentiation": {"type": "array"},
+          "strengths": {"type": "array"}
+        }
+      }
+    },
+    "fact-verifier": {
+      "input_schema": {
+        "type": "object",
+        "required": ["claims", "sources"],
+        "properties": {
+          "claims": {"type": "array"},
+          "sources": {"type": "array"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["verified_facts", "questionable_claims"],
+        "properties": {
+          "verified_facts": {"type": "array"},
+          "questionable_claims": {"type": "array"}
+        }
+      }
+    },
+    "content-planner": {
+      "input_schema": {
+        "type": "object",
+        "required": ["topics", "timeline"],
+        "properties": {
+          "topics": {"type": "array"},
+          "timeline": {"type": "string"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["editorial_calendar", "priorities"],
+        "properties": {
+          "editorial_calendar": {"type": "array"},
+          "priorities": {"type": "array"}
+        }
+      }
+    },
+    "angle-definer": {
+      "input_schema": {
+        "type": "object",
+        "required": ["topic", "research"],
+        "properties": {
+          "topic": {"type": "string"},
+          "research": {"type": "object"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["unique_angle", "perspective", "differentiation"],
+        "properties": {
+          "unique_angle": {"type": "string"},
+          "perspective": {"type": "string"},
+          "differentiation": {"type": "string"}
+        }
+      }
+    },
+    "audience-profiler": {
+      "input_schema": {
+        "type": "object",
+        "required": ["content_type", "topic"],
+        "properties": {
+          "content_type": {"type": "string"},
+          "topic": {"type": "string"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["target_audience", "pain_points", "interests"],
+        "properties": {
+          "target_audience": {"type": "object"},
+          "pain_points": {"type": "array"},
+          "interests": {"type": "array"}
+        }
+      }
+    },
+    "spec-writer": {
+      "input_schema": {
+        "type": "object",
+        "required": ["topic", "angle", "audience"],
+        "properties": {
+          "topic": {"type": "string"},
+          "angle": {"type": "string"},
+          "audience": {"type": "object"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["specification", "requirements", "deliverables"],
+        "properties": {
+          "specification": {"type": "object"},
+          "requirements": {"type": "array"},
+          "deliverables": {"type": "array"}
+        }
+      }
+    },
+    "template-selector": {
+      "input_schema": {
+        "type": "object",
+        "required": ["content_type", "spec"],
+        "properties": {
+          "content_type": {"type": "string"},
+          "spec": {"type": "object"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["template", "structure"],
+        "properties": {
+          "template": {"type": "string"},
+          "structure": {"type": "object"}
+        }
+      }
+    },
+    "outline-builder": {
+      "input_schema": {
+        "type": "object",
+        "required": ["spec", "template"],
+        "properties": {
+          "spec": {"type": "object"},
+          "template": {"type": "string"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["outline", "sections"],
+        "properties": {
+          "outline": {"type": "array"},
+          "sections": {"type": "array"}
+        }
+      }
+    },
+    "intro-writer": {
+      "input_schema": {
+        "type": "object",
+        "required": ["topic", "angle", "outline"],
+        "properties": {
+          "topic": {"type": "string"},
+          "angle": {"type": "string"},
+          "outline": {"type": "array"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["introduction", "hook"],
+        "properties": {
+          "introduction": {"type": "string", "minLength": 100},
+          "hook": {"type": "string"}
+        }
+      }
+    },
+    "body-writer": {
+      "input_schema": {
+        "type": "object",
+        "required": ["outline", "sections"],
+        "properties": {
+          "outline": {"type": "array"},
+          "sections": {"type": "array"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["body_content", "sections_written"],
+        "properties": {
+          "body_content": {"type": "string", "minLength": 500},
+          "sections_written": {"type": "array"}
+        }
+      }
+    },
+    "conclusion-writer": {
+      "input_schema": {
+        "type": "object",
+        "required": ["body_content", "key_points"],
+        "properties": {
+          "body_content": {"type": "string"},
+          "key_points": {"type": "array"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["conclusion", "cta"],
+        "properties": {
+          "conclusion": {"type": "string", "minLength": 50},
+          "cta": {"type": "string"}
+        }
+      }
+    },
+    "quote-integrator": {
+      "input_schema": {
+        "type": "object",
+        "required": ["content", "sources"],
+        "properties": {
+          "content": {"type": "string"},
+          "sources": {"type": "array"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["updated_content", "citations"],
+        "properties": {
+          "updated_content": {"type": "string"},
+          "citations": {"type": "array"}
+        }
+      }
+    },
+    "code-example-writer": {
+      "input_schema": {
+        "type": "object",
+        "required": ["concept", "language"],
+        "properties": {
+          "concept": {"type": "string"},
+          "language": {"type": "string"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["code_example", "explanation"],
+        "properties": {
+          "code_example": {"type": "string"},
+          "explanation": {"type": "string"}
+        }
+      }
+    },
+    "api-documenter": {
+      "input_schema": {
+        "type": "object",
+        "required": ["api_spec", "endpoints"],
+        "properties": {
+          "api_spec": {"type": "object"},
+          "endpoints": {"type": "array"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["documentation", "examples"],
+        "properties": {
+          "documentation": {"type": "string"},
+          "examples": {"type": "array"}
+        }
+      }
+    },
+    "command-demonstrator": {
+      "input_schema": {
+        "type": "object",
+        "required": ["commands", "context"],
+        "properties": {
+          "commands": {"type": "array"},
+          "context": {"type": "string"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["demonstrations", "outputs"],
+        "properties": {
+          "demonstrations": {"type": "array"},
+          "outputs": {"type": "array"}
+        }
+      }
+    },
+    "error-handler": {
+      "input_schema": {
+        "type": "object",
+        "required": ["errors", "context"],
+        "properties": {
+          "errors": {"type": "array"},
+          "context": {"type": "string"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["solutions", "troubleshooting"],
+        "properties": {
+          "solutions": {"type": "array"},
+          "troubleshooting": {"type": "object"}
+        }
+      }
+    },
+    "step-sequencer": {
+      "input_schema": {
+        "type": "object",
+        "required": ["concept", "complexity"],
+        "properties": {
+          "concept": {"type": "string"},
+          "complexity": {"enum": ["beginner", "intermediate", "advanced"]}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["steps", "sequence"],
+        "properties": {
+          "steps": {"type": "array"},
+          "sequence": {"type": "array"}
+        }
+      }
+    },
+    "exercise-designer": {
+      "input_schema": {
+        "type": "object",
+        "required": ["concept", "difficulty"],
+        "properties": {
+          "concept": {"type": "string"},
+          "difficulty": {"type": "string"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["exercises", "objectives"],
+        "properties": {
+          "exercises": {"type": "array"},
+          "objectives": {"type": "array"}
+        }
+      }
+    },
+    "solution-provider": {
+      "input_schema": {
+        "type": "object",
+        "required": ["exercises"],
+        "properties": {
+          "exercises": {"type": "array"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["solutions", "explanations"],
+        "properties": {
+          "solutions": {"type": "array"},
+          "explanations": {"type": "array"}
+        }
+      }
+    },
+    "concept-explainer": {
+      "input_schema": {
+        "type": "object",
+        "required": ["concept", "audience_level"],
+        "properties": {
+          "concept": {"type": "string"},
+          "audience_level": {"type": "string"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["explanation", "examples", "analogies"],
+        "properties": {
+          "explanation": {"type": "string"},
+          "examples": {"type": "array"},
+          "analogies": {"type": "array"}
+        }
+      }
+    },
+    "grammar-checker": {
+      "input_schema": {
+        "type": "object",
+        "required": ["content"],
+        "properties": {
+          "content": {"type": "string"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["corrected_content", "errors_found"],
+        "properties": {
+          "corrected_content": {"type": "string"},
+          "errors_found": {"type": "array"}
+        }
+      }
+    },
+    "style-editor": {
+      "input_schema": {
+        "type": "object",
+        "required": ["content", "brand_voice"],
+        "properties": {
+          "content": {"type": "string"},
+          "brand_voice": {"type": "string"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["edited_content", "style_changes"],
+        "properties": {
+          "edited_content": {"type": "string"},
+          "style_changes": {"type": "array"}
+        }
+      }
+    },
+    "flow-optimizer": {
+      "input_schema": {
+        "type": "object",
+        "required": ["content"],
+        "properties": {
+          "content": {"type": "string"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["optimized_content", "improvements"],
+        "properties": {
+          "optimized_content": {"type": "string"},
+          "improvements": {"type": "array"}
+        }
+      }
+    },
+    "readability-scorer": {
+      "input_schema": {
+        "type": "object",
+        "required": ["content"],
+        "properties": {
+          "content": {"type": "string"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["score", "metrics", "suggestions"],
+        "properties": {
+          "score": {"type": "number"},
+          "metrics": {"type": "object"},
+          "suggestions": {"type": "array"}
+        }
+      }
+    },
+    "link-validator": {
+      "input_schema": {
+        "type": "object",
+        "required": ["content", "links"],
+        "properties": {
+          "content": {"type": "string"},
+          "links": {"type": "array"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["valid_links", "broken_links"],
+        "properties": {
+          "valid_links": {"type": "array"},
+          "broken_links": {"type": "array"}
+        }
+      }
+    },
+    "ai-prompt-engineer": {
+      "input_schema": {
+        "type": "object",
+        "required": ["concept", "style"],
+        "properties": {
+          "concept": {"type": "string"},
+          "style": {"type": "string"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["prompt", "variations"],
+        "properties": {
+          "prompt": {"type": "string"},
+          "variations": {"type": "array"}
+        }
+      }
+    },
+    "chart-designer": {
+      "input_schema": {
+        "type": "object",
+        "required": ["data", "chart_type"],
+        "properties": {
+          "data": {"type": "object"},
+          "chart_type": {"type": "string"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["chart_spec", "description"],
+        "properties": {
+          "chart_spec": {"type": "object"},
+          "description": {"type": "string"}
+        }
+      }
+    },
+    "infographic-planner": {
+      "input_schema": {
+        "type": "object",
+        "required": ["content", "data_points"],
+        "properties": {
+          "content": {"type": "string"},
+          "data_points": {"type": "array"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["layout", "visual_elements"],
+        "properties": {
+          "layout": {"type": "object"},
+          "visual_elements": {"type": "array"}
+        }
+      }
+    },
+    "thumbnail-creator": {
+      "input_schema": {
+        "type": "object",
+        "required": ["title", "platform"],
+        "properties": {
+          "title": {"type": "string"},
+          "platform": {"enum": ["youtube", "instagram", "twitter", "linkedin"]}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["thumbnail_spec", "text_overlay"],
+        "properties": {
+          "thumbnail_spec": {"type": "object"},
+          "text_overlay": {"type": "string"}
+        }
+      }
+    },
+    "diagram-sketcher": {
+      "input_schema": {
+        "type": "object",
+        "required": ["concept", "diagram_type"],
+        "properties": {
+          "concept": {"type": "string"},
+          "diagram_type": {"type": "string"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["diagram_spec", "elements"],
+        "properties": {
+          "diagram_spec": {"type": "object"},
+          "elements": {"type": "array"}
+        }
+      }
+    },
+    "content-atomizer": {
+      "input_schema": {
+        "type": "object",
+        "required": ["content"],
+        "properties": {
+          "content": {"type": "string"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["key_points", "snippets"],
+        "properties": {
+          "key_points": {"type": "array"},
+          "snippets": {"type": "array"}
+        }
+      }
+    },
+    "twitter-formatter": {
+      "input_schema": {
+        "type": "object",
+        "required": ["content", "key_points"],
+        "properties": {
+          "content": {"type": "string"},
+          "key_points": {"type": "array"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["thread", "tweets"],
+        "properties": {
+          "thread": {"type": "array"},
+          "tweets": {"type": "array", "maxItems": 10}
+        }
+      }
+    },
+    "linkedin-adapter": {
+      "input_schema": {
+        "type": "object",
+        "required": ["content", "professional_angle"],
+        "properties": {
+          "content": {"type": "string"},
+          "professional_angle": {"type": "string"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["post", "hashtags"],
+        "properties": {
+          "post": {"type": "string", "maxLength": 3000},
+          "hashtags": {"type": "array"}
+        }
+      }
+    },
+    "instagram-packager": {
+      "input_schema": {
+        "type": "object",
+        "required": ["content", "visual_style"],
+        "properties": {
+          "content": {"type": "string"},
+          "visual_style": {"type": "string"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["caption", "hashtags", "carousel_slides"],
+        "properties": {
+          "caption": {"type": "string"},
+          "hashtags": {"type": "array", "maxItems": 30},
+          "carousel_slides": {"type": "array"}
+        }
+      }
+    },
+    "newsletter-curator": {
+      "input_schema": {
+        "type": "object",
+        "required": ["content", "newsletter_format"],
+        "properties": {
+          "content": {"type": "string"},
+          "newsletter_format": {"type": "string"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["newsletter", "sections"],
+        "properties": {
+          "newsletter": {"type": "string"},
+          "sections": {"type": "array"}
+        }
+      }
+    },
+    "metrics-collector": {
+      "input_schema": {
+        "type": "object",
+        "required": ["content_id", "platform"],
+        "properties": {
+          "content_id": {"type": "string"},
+          "platform": {"type": "string"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["metrics", "timestamp"],
+        "properties": {
+          "metrics": {"type": "object"},
+          "timestamp": {"type": "string"}
+        }
+      }
+    },
+    "trend-spotter": {
+      "input_schema": {
+        "type": "object",
+        "required": ["metrics_history"],
+        "properties": {
+          "metrics_history": {"type": "array"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["trends", "patterns", "insights"],
+        "properties": {
+          "trends": {"type": "array"},
+          "patterns": {"type": "array"},
+          "insights": {"type": "array"}
+        }
+      }
+    },
+    "improvement-advisor": {
+      "input_schema": {
+        "type": "object",
+        "required": ["performance_data", "content_analysis"],
+        "properties": {
+          "performance_data": {"type": "object"},
+          "content_analysis": {"type": "object"}
+        }
+      },
+      "output_schema": {
+        "type": "object",
+        "required": ["recommendations", "action_items", "priorities"],
+        "properties": {
+          "recommendations": {"type": "array"},
+          "action_items": {"type": "array"},
+          "priorities": {"type": "array"}
+        }
+      }
+    }
+  }
+}

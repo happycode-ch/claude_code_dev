@@ -1,0 +1,162 @@
+{
+  "competitor-analyzer": [
+    {
+      "test_name": "comprehensive_competitor_analysis",
+      "input": {
+        "topic": "AI content creation tools",
+        "competitors": ["Jasper AI", "Copy.ai", "Writesonic", "ChatGPT"]
+      },
+      "expected_output": {
+        "gaps": [
+          "Limited technical documentation features",
+          "No integrated version control",
+          "Weak collaboration tools"
+        ],
+        "differentiation": [
+          "Agent-based architecture",
+          "Pipeline automation",
+          "Quality validation system"
+        ],
+        "strengths": [
+          "Fast content generation",
+          "Multiple output formats",
+          "SEO optimization"
+        ]
+      }
+    },
+    {
+      "test_name": "niche_market_analysis",
+      "input": {
+        "topic": "Developer documentation tools",
+        "competitors": ["GitBook", "ReadMe", "Docusaurus"]
+      },
+      "expected_output": {
+        "gaps": [
+          "AI-powered content generation",
+          "Automated API documentation",
+          "Code example generation"
+        ],
+        "differentiation": [
+          "AI-first approach",
+          "Multi-format output",
+          "Integrated testing"
+        ],
+        "strengths": [
+          "Version control integration",
+          "Developer-friendly",
+          "Open source options"
+        ]
+      }
+    },
+    {
+      "test_name": "minimal_competitor_set",
+      "input": {
+        "topic": "Newsletter automation",
+        "competitors": ["Substack", "ConvertKit"]
+      },
+      "expected_output": {
+        "gaps": [
+          "AI content suggestions",
+          "Automated curation"
+        ],
+        "differentiation": [
+          "Full content generation",
+          "Multi-channel distribution"
+        ],
+        "strengths": [
+          "Established user base",
+          "Simple interfaces"
+        ]
+      }
+    },
+    {
+      "test_name": "edge_case_empty_competitors",
+      "input": {
+        "topic": "Quantum computing tutorials",
+        "competitors": []
+      },
+      "expected_output": {
+        "gaps": ["No direct competitors identified"],
+        "differentiation": ["First mover advantage"],
+        "strengths": ["Open market opportunity"]
+      }
+    }
+  ],
+  "fact-verifier": [
+    {
+      "test_name": "technical_claims_verification",
+      "input": {
+        "claims": [
+          "GPT-4 has 1.76 trillion parameters",
+          "Claude can process 100k tokens",
+          "Python is the most popular programming language"
+        ],
+        "sources": [
+          "https://openai.com/research",
+          "https://anthropic.com/claude",
+          "Stack Overflow Survey 2024"
+        ]
+      },
+      "expected_output": {
+        "verified_facts": [
+          "Claude can process 100k tokens",
+          "Python ranks highly in popularity surveys"
+        ],
+        "questionable_claims": [
+          "GPT-4 parameter count unconfirmed"
+        ]
+      }
+    },
+    {
+      "test_name": "statistical_data_validation",
+      "input": {
+        "claims": [
+          "80% of businesses use AI",
+          "Content creation time reduced by 50%",
+          "ROI increased by 300%"
+        ],
+        "sources": [
+          "Industry report 2024",
+          "Case study data",
+          "Marketing metrics"
+        ]
+      },
+      "expected_output": {
+        "verified_facts": [
+          "Content creation time reduced significantly",
+          "AI adoption increasing in businesses"
+        ],
+        "questionable_claims": [
+          "Specific percentages need verification"
+        ]
+      }
+    },
+    {
+      "test_name": "simple_fact_check",
+      "input": {
+        "claims": ["JavaScript was created in 1995"],
+        "sources": ["Wikipedia"]
+      },
+      "expected_output": {
+        "verified_facts": ["JavaScript was created in 1995"],
+        "questionable_claims": []
+      }
+    },
+    {
+      "test_name": "conflicting_sources",
+      "input": {
+        "claims": [
+          "Product launches next month",
+          "Product launches next quarter"
+        ],
+        "sources": ["Blog post", "Press release"]
+      },
+      "expected_output": {
+        "verified_facts": [],
+        "questionable_claims": [
+          "Product launch date conflicting"
+        ]
+      }
+    }
+  ]
+}

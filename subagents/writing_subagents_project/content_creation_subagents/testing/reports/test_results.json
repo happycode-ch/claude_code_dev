@@ -1,0 +1,119 @@
+{
+  "summary": {
+    "total_tests": 9,
+    "passed": 6,
+    "failed": 3,
+    "errors": 0,
+    "success_rate": 66.66666666666666,
+    "total_execution_time": 4.363059997558594e-05,
+    "total_tokens_used": 354,
+    "timestamp": "2025-09-14T22:37:55.691232"
+  },
+  "agent_results": {
+    "keyword-researcher": {
+      "total": 6,
+      "passed": 4,
+      "failed": 2,
+      "errors": 0,
+      "tests": [
+        {
+          "test_name": "valid_blog_research",
+          "status": "pass",
+          "execution_time": 1.5020370483398438e-05,
+          "tokens_used": 55,
+          "error": null
+        },
+        {
+          "test_name": "technical_tutorial",
+          "status": "pass",
+          "execution_time": 7.62939453125e-06,
+          "tokens_used": 55,
+          "error": null
+        },
+        {
+          "test_name": "edge_case_minimal",
+          "status": "fail",
+          "execution_time": 0,
+          "tokens_used": 0,
+          "error": "Input validation failed"
+        },
+        {
+          "test_name": "valid_blog_research",
+          "status": "pass",
+          "execution_time": 5.0067901611328125e-06,
+          "tokens_used": 55,
+          "error": null
+        },
+        {
+          "test_name": "technical_tutorial",
+          "status": "pass",
+          "execution_time": 3.814697265625e-06,
+          "tokens_used": 55,
+          "error": null
+        },
+        {
+          "test_name": "edge_case_minimal",
+          "status": "fail",
+          "execution_time": 0,
+          "tokens_used": 0,
+          "error": "Input validation failed"
+        }
+      ]
+    },
+    "topic-scout": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "errors": 0,
+      "tests": [
+        {
+          "test_name": "valid_niche_trending",
+          "status": "pass",
+          "execution_time": 5.4836273193359375e-06,
+          "tokens_used": 50,
+          "error": null
+        },
+        {
+          "test_name": "competitive_analysis",
+          "status": "pass",
+          "execution_time": 3.5762786865234375e-06,
+          "tokens_used": 51,
+          "error": null
+        }
+      ]
+    },
+    "source-gatherer": {
+      "total": 1,
+      "passed": 0,
+      "failed": 1,
+      "errors": 0,
+      "tests": [
+        {
+          "test_name": "comprehensive_research",
+          "status": "fail",
+          "execution_time": 3.0994415283203125e-06,
+          "tokens_used": 33,
+          "error": "Validation: ['Missing required field: sources']"
+        }
+      ]
+    }
+  },
+  "failed_tests": [
+    {
+      "agent": "keyword-researcher",
+      "test": "edge_case_minimal",
+      "error": "Input validation failed"
+    },
+    {
+      "agent": "source-gatherer",
+      "test": "comprehensive_research",
+      "error": "Validation: ['Missing required field: sources']"
+    },
+    {
+      "agent": "keyword-researcher",
+      "test": "edge_case_minimal",
+      "error": "Input validation failed"
+    }
+  ],
+  "error_tests": []
+}

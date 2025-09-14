@@ -1,0 +1,416 @@
+{
+  "technical_phase": {
+    "code-example-writer": [
+      {
+        "test_name": "python_async_example",
+        "input": {
+          "concept": "async web scraping",
+          "language": "python"
+        },
+        "expected_output": {
+          "code_example": "import asyncio\nimport aiohttp\n\nasync def fetch_url(session, url):\n    async with session.get(url) as response:\n        return await response.text()\n\nasync def main():\n    urls = ['http://example.com', 'http://example.org']\n    async with aiohttp.ClientSession() as session:\n        tasks = [fetch_url(session, url) for url in urls]\n        results = await asyncio.gather(*tasks)\n    return results",
+          "explanation": "This example demonstrates concurrent HTTP requests using Python's asyncio and aiohttp libraries"
+        }
+      }
+    ],
+    "api-documenter": [
+      {
+        "test_name": "rest_api_documentation",
+        "input": {
+          "api_spec": {
+            "endpoint": "/api/users",
+            "methods": ["GET", "POST", "PUT", "DELETE"]
+          },
+          "endpoints": [
+            {"path": "/api/users", "method": "GET", "description": "List all users"},
+            {"path": "/api/users/{id}", "method": "GET", "description": "Get user by ID"}
+          ]
+        },
+        "expected_output": {
+          "documentation": "## Users API\n\n### GET /api/users\nList all users\n\n**Response:**\n```json\n[\n  {\"id\": 1, \"name\": \"John\"}\n]\n```\n\n### GET /api/users/{id}\nGet specific user\n\n**Parameters:**\n- `id` (integer): User ID\n\n**Response:**\n```json\n{\"id\": 1, \"name\": \"John\"}\n```",
+          "examples": [
+            "curl -X GET http://api.example.com/api/users",
+            "curl -X GET http://api.example.com/api/users/1"
+          ]
+        }
+      }
+    ],
+    "command-demonstrator": [
+      {
+        "test_name": "git_commands_demo",
+        "input": {
+          "commands": ["git init", "git add .", "git commit -m 'Initial'"],
+          "context": "Setting up a new repository"
+        },
+        "expected_output": {
+          "demonstrations": [
+            "$ git init\nInitialized empty Git repository in .git/",
+            "$ git add .\nAdding all files to staging",
+            "$ git commit -m 'Initial'\n[main abc123] Initial\n 5 files changed"
+          ],
+          "outputs": [
+            "Repository initialized",
+            "Files staged",
+            "Commit created"
+          ]
+        }
+      }
+    ],
+    "error-handler": [
+      {
+        "test_name": "common_python_errors",
+        "input": {
+          "errors": ["ImportError: No module named 'requests'", "KeyError: 'missing_key'"],
+          "context": "Python application debugging"
+        },
+        "expected_output": {
+          "solutions": [
+            "Install missing module: pip install requests",
+            "Check dictionary key exists: data.get('missing_key', default_value)"
+          ],
+          "troubleshooting": {
+            "steps": ["Check virtual environment", "Verify dependencies", "Review code logic"],
+            "prevention": ["Use requirements.txt", "Implement error handling"]
+          }
+        }
+      }
+    ]
+  },
+  "tutorial_phase": {
+    "step-sequencer": [
+      {
+        "test_name": "api_tutorial_sequence",
+        "input": {
+          "concept": "Building REST API",
+          "complexity": "intermediate"
+        },
+        "expected_output": {
+          "steps": [
+            "Setup environment",
+            "Create basic server",
+            "Add routes",
+            "Connect database",
+            "Add authentication",
+            "Write tests",
+            "Deploy"
+          ],
+          "sequence": [1, 2, 3, 4, 5, 6, 7]
+        }
+      }
+    ],
+    "exercise-designer": [
+      {
+        "test_name": "coding_exercises",
+        "input": {
+          "concept": "Array manipulation",
+          "difficulty": "beginner"
+        },
+        "expected_output": {
+          "exercises": [
+            "Find the maximum value in an array",
+            "Reverse an array in place",
+            "Remove duplicates from array"
+          ],
+          "objectives": [
+            "Understand array traversal",
+            "Practice index manipulation",
+            "Learn efficiency concepts"
+          ]
+        }
+      }
+    ],
+    "solution-provider": [
+      {
+        "test_name": "exercise_solutions",
+        "input": {
+          "exercises": ["Reverse a string", "Check palindrome"]
+        },
+        "expected_output": {
+          "solutions": [
+            "def reverse_string(s): return s[::-1]",
+            "def is_palindrome(s): return s == s[::-1]"
+          ],
+          "explanations": [
+            "Python slice notation with negative step reverses sequence",
+            "Compare string with its reverse to check palindrome"
+          ]
+        }
+      }
+    ],
+    "concept-explainer": [
+      {
+        "test_name": "recursion_explanation",
+        "input": {
+          "concept": "Recursion",
+          "audience_level": "beginner"
+        },
+        "expected_output": {
+          "explanation": "Recursion is when a function calls itself. Think of it like Russian dolls - each doll contains a smaller version of itself until you reach the smallest one.",
+          "examples": ["Factorial: n! = n × (n-1)!", "Fibonacci sequence"],
+          "analogies": ["Russian dolls", "Mirror facing mirror", "Folder containing folders"]
+        }
+      }
+    ]
+  },
+  "qa_phase": {
+    "style-editor": [
+      {
+        "test_name": "brand_voice_editing",
+        "input": {
+          "content": "This solution is really awesome and super cool!",
+          "brand_voice": "professional and authoritative"
+        },
+        "expected_output": {
+          "edited_content": "This solution provides significant value and demonstrates excellence.",
+          "style_changes": ["Removed casual language", "Added professional tone"]
+        }
+      }
+    ],
+    "flow-optimizer": [
+      {
+        "test_name": "content_flow_improvement",
+        "input": {
+          "content": "First, we'll do X. But before that, you need Y. Also, don't forget Z which comes before X."
+        },
+        "expected_output": {
+          "optimized_content": "Begin with Z as the foundation. Next, establish Y. Finally, implement X to complete the process.",
+          "improvements": ["Logical sequence restored", "Clear progression added"]
+        }
+      }
+    ],
+    "readability-scorer": [
+      {
+        "test_name": "technical_content_scoring",
+        "input": {
+          "content": "The implementation of the asynchronous paradigm necessitates comprehension of concurrent execution models."
+        },
+        "expected_output": {
+          "score": 45,
+          "metrics": {
+            "flesch_reading_ease": 15,
+            "grade_level": 16,
+            "sentence_complexity": "high"
+          },
+          "suggestions": ["Simplify vocabulary", "Break into shorter sentences", "Add examples"]
+        }
+      }
+    ],
+    "link-validator": [
+      {
+        "test_name": "article_link_check",
+        "input": {
+          "content": "Check [this guide](http://example.com) and [documentation](http://broken.link)",
+          "links": ["http://example.com", "http://broken.link"]
+        },
+        "expected_output": {
+          "valid_links": ["http://example.com"],
+          "broken_links": ["http://broken.link"]
+        }
+      }
+    ]
+  },
+  "visual_phase": {
+    "ai-prompt-engineer": [
+      {
+        "test_name": "hero_image_prompt",
+        "input": {
+          "concept": "Cloud computing",
+          "style": "modern tech illustration"
+        },
+        "expected_output": {
+          "prompt": "Modern isometric illustration of cloud computing infrastructure, servers connected by glowing data streams, purple and blue gradient, minimalist style, white background",
+          "variations": [
+            "Add floating UI elements",
+            "Include human silhouettes for scale",
+            "Night mode version with dark background"
+          ]
+        }
+      }
+    ],
+    "chart-designer": [
+      {
+        "test_name": "performance_chart",
+        "input": {
+          "data": {"before": 100, "after": 250},
+          "chart_type": "bar"
+        },
+        "expected_output": {
+          "chart_spec": {
+            "type": "bar",
+            "data": [100, 250],
+            "labels": ["Before", "After"],
+            "colors": ["#FF6B6B", "#4ECDC4"]
+          },
+          "description": "Bar chart showing 150% performance improvement"
+        }
+      }
+    ],
+    "infographic-planner": [
+      {
+        "test_name": "process_infographic",
+        "input": {
+          "content": "5-step deployment process",
+          "data_points": ["Build", "Test", "Stage", "Review", "Deploy"]
+        },
+        "expected_output": {
+          "layout": {
+            "style": "horizontal-flow",
+            "sections": 5,
+            "icons": true
+          },
+          "visual_elements": ["Arrow connectors", "Step numbers", "Icon for each step", "Progress bar"]
+        }
+      }
+    ],
+    "thumbnail-creator": [
+      {
+        "test_name": "youtube_thumbnail",
+        "input": {
+          "title": "Master Python in 30 Days",
+          "platform": "youtube"
+        },
+        "expected_output": {
+          "thumbnail_spec": {
+            "dimensions": "1280x720",
+            "background": "gradient",
+            "elements": ["Python logo", "30-day calendar icon", "Progress bar"]
+          },
+          "text_overlay": "MASTER PYTHON\\n30 DAYS"
+        }
+      }
+    ],
+    "diagram-sketcher": [
+      {
+        "test_name": "architecture_diagram",
+        "input": {
+          "concept": "Microservices architecture",
+          "diagram_type": "system"
+        },
+        "expected_output": {
+          "diagram_spec": {
+            "type": "system",
+            "components": ["API Gateway", "Services", "Database", "Message Queue"],
+            "connections": "bidirectional"
+          },
+          "elements": ["Boxes for services", "Arrows for data flow", "Database symbols", "User icon"]
+        }
+      }
+    ]
+  },
+  "distribution_phase": {
+    "linkedin-adapter": [
+      {
+        "test_name": "professional_post",
+        "input": {
+          "content": "New blog post about CI/CD best practices",
+          "professional_angle": "DevOps leadership"
+        },
+        "expected_output": {
+          "post": "🚀 Just published: 'CI/CD Best Practices That Actually Work'\\n\\nAfter implementing CI/CD pipelines for 50+ teams, here are the patterns that consistently deliver results:\\n\\n✅ Start with tests, not tools\\n✅ Automate incrementally\\n✅ Monitor everything\\n\\nFull article explores each practice with real examples.\\n\\nWhat's your biggest CI/CD challenge?",
+          "hashtags": ["#DevOps", "#CICD", "#SoftwareEngineering", "#Automation", "#TechLeadership"]
+        }
+      }
+    ],
+    "instagram-packager": [
+      {
+        "test_name": "carousel_post",
+        "input": {
+          "content": "5 Python tips for beginners",
+          "visual_style": "code screenshots"
+        },
+        "expected_output": {
+          "caption": "🐍 5 Python tips that changed my coding life!\\n\\nSwipe to see each tip with examples →\\n\\nWhich one is new to you? Comment below! 💬",
+          "hashtags": ["#Python", "#Coding", "#Programming", "#LearnToCode", "#TechTips", "#Developer"],
+          "carousel_slides": [
+            "Title slide: 5 Python Tips",
+            "Tip 1: List comprehensions",
+            "Tip 2: F-strings",
+            "Tip 3: Enumerate",
+            "Tip 4: Zip function",
+            "Tip 5: Context managers"
+          ]
+        }
+      }
+    ],
+    "newsletter-curator": [
+      {
+        "test_name": "weekly_newsletter",
+        "input": {
+          "content": "This week in tech: AI advances, new frameworks, industry news",
+          "newsletter_format": "developer-focused"
+        },
+        "expected_output": {
+          "newsletter": "## This Week in Tech\\n\\n### 🤖 AI Advances\\nMajor breakthrough in model efficiency...\\n\\n### 🛠 New Frameworks\\nExciting releases this week...\\n\\n### 📰 Industry News\\nKey developments to watch...",
+          "sections": ["AI Update", "Tools & Frameworks", "Industry News", "Tutorial of the Week", "Community Spotlight"]
+        }
+      }
+    ]
+  },
+  "performance_phase": {
+    "metrics-collector": [
+      {
+        "test_name": "content_metrics",
+        "input": {
+          "content_id": "blog-12345",
+          "platform": "website"
+        },
+        "expected_output": {
+          "metrics": {
+            "views": 5420,
+            "engagement_rate": 0.34,
+            "avg_time_on_page": 245,
+            "bounce_rate": 0.42
+          },
+          "timestamp": "2024-01-15T10:00:00Z"
+        }
+      }
+    ],
+    "trend-spotter": [
+      {
+        "test_name": "engagement_trends",
+        "input": {
+          "metrics_history": [
+            {"date": "2024-01-01", "views": 1000},
+            {"date": "2024-01-08", "views": 1500},
+            {"date": "2024-01-15", "views": 2200}
+          ]
+        },
+        "expected_output": {
+          "trends": ["Upward trajectory", "50% week-over-week growth"],
+          "patterns": ["Monday spike", "Weekend dip"],
+          "insights": ["Technical content performs best", "Tutorial format drives engagement"]
+        }
+      }
+    ],
+    "improvement-advisor": [
+      {
+        "test_name": "optimization_recommendations",
+        "input": {
+          "performance_data": {
+            "avg_read_time": 2.5,
+            "target_read_time": 5,
+            "bounce_rate": 0.6
+          },
+          "content_analysis": {
+            "word_count": 2500,
+            "readability_score": 45
+          }
+        },
+        "expected_output": {
+          "recommendations": [
+            "Improve introduction hook",
+            "Add more visual breaks",
+            "Simplify complex sections",
+            "Include interactive elements"
+          ],
+          "action_items": [
+            "Rewrite first paragraph",
+            "Add 3-4 images or diagrams",
+            "Break long paragraphs"
+          ],
+          "priorities": ["Hook improvement", "Visual additions", "Readability enhancement"]
+        }
+      }
+    ]
+  }
+}

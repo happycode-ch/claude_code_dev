@@ -1,0 +1,139 @@
+{
+  "task_integration": {
+    "enabled": true,
+    "fallback_to_mock": true,
+    "timeout_seconds": 30,
+    "retry_attempts": 2,
+    "parallel_execution": true,
+    "max_parallel_tasks": 4,
+    "cache_results": true,
+    "verbose": false,
+    "model_preferences": {
+      "haiku": {
+        "agents": [
+          "keyword-researcher",
+          "grammar-checker",
+          "readability-scorer",
+          "link-validator",
+          "command-demonstrator",
+          "solution-provider",
+          "twitter-formatter",
+          "linkedin-adapter",
+          "instagram-packager",
+          "metrics-collector"
+        ],
+        "cost_per_1k_tokens": 0.0008,
+        "max_tokens": 500
+      },
+      "sonnet": {
+        "agents": [
+          "topic-scout",
+          "source-gatherer",
+          "competitor-analyzer",
+          "fact-verifier",
+          "angle-definer",
+          "audience-profiler",
+          "template-selector",
+          "outline-builder",
+          "intro-writer",
+          "body-writer",
+          "conclusion-writer",
+          "quote-integrator",
+          "code-example-writer",
+          "api-documenter",
+          "error-handler",
+          "step-sequencer",
+          "exercise-designer",
+          "style-editor",
+          "flow-optimizer",
+          "ai-prompt-engineer",
+          "chart-designer",
+          "infographic-planner",
+          "thumbnail-creator",
+          "diagram-sketcher",
+          "content-atomizer",
+          "newsletter-curator",
+          "trend-spotter"
+        ],
+        "cost_per_1k_tokens": 0.003,
+        "max_tokens": 2000
+      },
+      "opus": {
+        "agents": [
+          "content-planner",
+          "spec-writer",
+          "concept-explainer",
+          "improvement-advisor"
+        ],
+        "cost_per_1k_tokens": 0.015,
+        "max_tokens": 3000
+      }
+    },
+    "tool_permissions": {
+      "source-gatherer": ["WebSearch", "WebFetch"],
+      "fact-verifier": ["WebSearch", "WebFetch"],
+      "body-writer": ["Write"],
+      "intro-writer": ["Write"],
+      "conclusion-writer": ["Write"],
+      "quote-integrator": ["Read", "Edit"],
+      "grammar-checker": ["Read"],
+      "style-editor": ["Read", "Edit"],
+      "flow-optimizer": ["Read", "Edit"],
+      "link-validator": ["WebFetch"],
+      "content-atomizer": ["Read"],
+      "default": ["Read"]
+    },
+    "error_handling": {
+      "max_retries": 2,
+      "retry_delay_seconds": 1,
+      "fallback_strategies": [
+        "retry_with_simplified_input",
+        "use_mock_execution",
+        "log_and_continue"
+      ],
+      "timeout_behavior": "fallback_to_mock"
+    },
+    "performance_limits": {
+      "max_tokens_per_test": 5000,
+      "max_time_per_agent": 30,
+      "max_total_time": 3600,
+      "max_cost_per_run": 1.0
+    },
+    "logging": {
+      "log_level": "INFO",
+      "log_file": "task_execution.log",
+      "log_successful_executions": true,
+      "log_failed_executions": true,
+      "log_token_usage": true
+    }
+  },
+  "test_modes": {
+    "mock": {
+      "description": "Pure mock execution without Task tool",
+      "task_integration_enabled": false,
+      "execution_delay": 0.1
+    },
+    "hybrid": {
+      "description": "Task tool with mock fallback",
+      "task_integration_enabled": true,
+      "fallback_to_mock": true
+    },
+    "production": {
+      "description": "Full Task tool integration",
+      "task_integration_enabled": true,
+      "fallback_to_mock": false
+    }
+  },
+  "batch_execution": {
+    "enabled": true,
+    "batch_size": 5,
+    "parallel_batches": true,
+    "inter_batch_delay": 0.5
+  },
+  "cache_configuration": {
+    "enabled": true,
+    "ttl_seconds": 3600,
+    "max_cache_size_mb": 100,
+    "cache_directory": ".cache/task_results"
+  }
+}

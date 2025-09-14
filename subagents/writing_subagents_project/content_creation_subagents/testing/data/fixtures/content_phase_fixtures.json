@@ -1,0 +1,225 @@
+{
+  "outline-builder": [
+    {
+      "test_name": "comprehensive_blog_outline",
+      "input": {
+        "spec": {
+          "title": "Mastering Python Async Programming",
+          "sections": 6,
+          "word_count": 2500
+        },
+        "template": "technical-blog"
+      },
+      "expected_output": {
+        "outline": [
+          "I. Introduction - The async revolution (300 words)",
+          "II. Understanding async/await basics (400 words)",
+          "III. Event loops and coroutines (500 words)",
+          "IV. Practical async patterns (600 words)",
+          "V. Common pitfalls and solutions (400 words)",
+          "VI. Conclusion and best practices (300 words)"
+        ],
+        "sections": [
+          {"title": "Introduction", "word_target": 300, "key_points": ["Why async", "Performance benefits"]},
+          {"title": "Async basics", "word_target": 400, "key_points": ["Syntax", "Simple examples"]},
+          {"title": "Deep dive", "word_target": 500, "key_points": ["Event loop", "Coroutines"]},
+          {"title": "Patterns", "word_target": 600, "key_points": ["Real examples", "Best practices"]},
+          {"title": "Pitfalls", "word_target": 400, "key_points": ["Common errors", "Debugging"]},
+          {"title": "Conclusion", "word_target": 300, "key_points": ["Summary", "Resources"]}
+        ]
+      }
+    },
+    {
+      "test_name": "tutorial_outline",
+      "input": {
+        "spec": {
+          "title": "Build a REST API with FastAPI",
+          "sections": 8,
+          "includes_exercises": true
+        },
+        "template": "step-by-step-tutorial"
+      },
+      "expected_output": {
+        "outline": [
+          "1. Prerequisites and Setup",
+          "2. Hello World API",
+          "3. Request handling",
+          "4. Database integration",
+          "5. Authentication",
+          "6. Testing",
+          "7. Deployment",
+          "8. Exercises and Solutions"
+        ],
+        "sections": [
+          {"title": "Prerequisites", "exercises": false},
+          {"title": "Hello World", "exercises": true},
+          {"title": "Requests", "exercises": true},
+          {"title": "Database", "exercises": true},
+          {"title": "Auth", "exercises": true},
+          {"title": "Testing", "exercises": false},
+          {"title": "Deploy", "exercises": false},
+          {"title": "Practice", "exercises": true}
+        ]
+      }
+    },
+    {
+      "test_name": "minimal_news_outline",
+      "input": {
+        "spec": {
+          "title": "Breaking: Major Security Breach",
+          "sections": 3,
+          "word_count": 500
+        },
+        "template": "news-article"
+      },
+      "expected_output": {
+        "outline": [
+          "Lead: What happened",
+          "Body: Details and impact",
+          "Conclusion: What's next"
+        ],
+        "sections": [
+          {"title": "Lead", "word_target": 150},
+          {"title": "Details", "word_target": 250},
+          {"title": "Next steps", "word_target": 100}
+        ]
+      }
+    }
+  ],
+  "intro-writer": [
+    {
+      "test_name": "engaging_blog_intro",
+      "input": {
+        "topic": "Microservices architecture",
+        "angle": "Lessons from production failures",
+        "outline": ["Introduction", "Problem", "Solution", "Implementation", "Results"]
+      },
+      "expected_output": {
+        "introduction": "It was 3 AM when my phone erupted with alerts. Our microservices architecture—the one we'd spent months perfecting—was collapsing like a house of cards. One service timeout had triggered a cascade of failures across 47 interconnected services. As I scrambled to restore order, I realized we'd made every classic microservices mistake in the book. This is the story of how we learned the hard way, and the battle-tested patterns that emerged from the chaos.",
+        "hook": "3 AM disaster leads to microservices enlightenment"
+      }
+    },
+    {
+      "test_name": "tutorial_intro",
+      "input": {
+        "topic": "React Hooks",
+        "angle": "Learn by building",
+        "outline": ["Intro", "Setup", "useState", "useEffect", "Custom hooks"]
+      },
+      "expected_output": {
+        "introduction": "If you've been avoiding React Hooks because they seem complicated, you're not alone. But here's a secret: Hooks are actually simpler than class components once you understand the mental model. In this tutorial, we'll build a real-world todo application from scratch, introducing one Hook at a time. By the end, you'll not only understand Hooks—you'll wonder how you ever lived without them.",
+        "hook": "Master React Hooks in one practical project"
+      }
+    },
+    {
+      "test_name": "news_intro",
+      "input": {
+        "topic": "AI breakthrough",
+        "angle": "Industry impact",
+        "outline": ["Lead", "Details", "Analysis"]
+      },
+      "expected_output": {
+        "introduction": "In a development that could reshape the tech industry, researchers at MIT have achieved a breakthrough in AI efficiency, reducing training costs by 90% while improving accuracy. The new technique, announced this morning, has already drawn interest from major tech companies.",
+        "hook": "90% cost reduction in AI training achieved"
+      }
+    }
+  ],
+  "conclusion-writer": [
+    {
+      "test_name": "actionable_blog_conclusion",
+      "input": {
+        "body_content": "Article about implementing CI/CD pipelines...",
+        "key_points": [
+          "Automation saves time",
+          "Testing prevents bugs",
+          "Monitoring is crucial"
+        ]
+      },
+      "expected_output": {
+        "conclusion": "Implementing a robust CI/CD pipeline isn't just about tools—it's about transforming how your team delivers value. Start small: automate your tests this week, add deployment automation next month, and gradually build toward continuous delivery. Remember, every minute invested in automation pays dividends in reliability, speed, and developer happiness. The question isn't whether to implement CI/CD, but how quickly you can start reaping the benefits.",
+        "cta": "Start your CI/CD journey today—automate one process this week"
+      }
+    },
+    {
+      "test_name": "tutorial_conclusion",
+      "input": {
+        "body_content": "Tutorial on building REST APIs...",
+        "key_points": [
+          "FastAPI basics covered",
+          "Database integration complete",
+          "Authentication implemented"
+        ]
+      },
+      "expected_output": {
+        "conclusion": "Congratulations! You've built a production-ready REST API from scratch. You've mastered request handling, database operations, and secure authentication. But this is just the beginning. Take your API to the next level by adding rate limiting, implementing caching, or deploying to a cloud provider. The patterns you've learned here will serve you well in any backend project.",
+        "cta": "Deploy your API and share what you build!"
+      }
+    },
+    {
+      "test_name": "news_conclusion",
+      "input": {
+        "body_content": "News about tech acquisition...",
+        "key_points": [
+          "Deal worth $10B",
+          "Impact on competition",
+          "Regulatory concerns"
+        ]
+      },
+      "expected_output": {
+        "conclusion": "This acquisition marks a pivotal moment in the tech industry's consolidation trend. While the $10 billion deal promises innovation and integration, regulatory scrutiny and competitive concerns loom large. The coming months will reveal whether this merger delivers on its promises or becomes another cautionary tale.",
+        "cta": "Follow our coverage for updates on this developing story"
+      }
+    }
+  ],
+  "quote-integrator": [
+    {
+      "test_name": "technical_article_citations",
+      "input": {
+        "content": "Microservices architecture has revolutionized how we build applications. Studies show 70% improvement in deployment frequency.",
+        "sources": [
+          {"author": "Martin Fowler", "title": "Microservices", "url": "martinfowler.com"},
+          {"author": "DORA Report", "title": "State of DevOps 2024", "url": "dora.dev"}
+        ]
+      },
+      "expected_output": {
+        "updated_content": "Microservices architecture has revolutionized how we build applications. According to Martin Fowler, a leading voice in software architecture, this approach enables 'independent deployment of services.' The DORA State of DevOps Report 2024 confirms this with data showing '70% improvement in deployment frequency' for organizations adopting microservices.",
+        "citations": [
+          "Fowler, M. (2024). Microservices. martinfowler.com",
+          "DORA. (2024). State of DevOps Report. dora.dev"
+        ]
+      }
+    },
+    {
+      "test_name": "news_article_sources",
+      "input": {
+        "content": "The company announced record profits. CEO stated ambitious growth plans.",
+        "sources": [
+          {"author": "Tech Corp", "title": "Q4 Earnings Call", "date": "2024-01-15"},
+          {"author": "Jane Smith", "title": "CEO Interview", "publication": "TechCrunch"}
+        ]
+      },
+      "expected_output": {
+        "updated_content": "The company announced record profits during its Q4 earnings call on January 15. CEO Jane Smith told TechCrunch, 'We have ambitious growth plans for the coming year.'",
+        "citations": [
+          "Tech Corp Q4 Earnings Call, January 15, 2024",
+          "Smith, J. Interview with TechCrunch, 2024"
+        ]
+      }
+    },
+    {
+      "test_name": "academic_citations",
+      "input": {
+        "content": "Research shows significant performance improvements.",
+        "sources": [
+          {"author": "Johnson et al.", "title": "Performance Analysis", "journal": "ACM", "year": "2024"}
+        ]
+      },
+      "expected_output": {
+        "updated_content": "Research by Johnson et al. (2024) demonstrates significant performance improvements in their comprehensive analysis.",
+        "citations": [
+          "Johnson et al. (2024). Performance Analysis. ACM."
+        ]
+      }
+    }
+  ]
+}

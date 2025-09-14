@@ -1,0 +1,390 @@
+{
+  "content-planner": [
+    {
+      "test_name": "weekly_editorial_calendar",
+      "input": {
+        "topics": [
+          "AI automation tools",
+          "Python web scraping",
+          "React best practices",
+          "DevOps pipelines"
+        ],
+        "timeline": "next 7 days"
+      },
+      "expected_output": {
+        "editorial_calendar": [
+          {"day": 1, "topic": "AI automation tools", "type": "blog"},
+          {"day": 3, "topic": "Python web scraping", "type": "tutorial"},
+          {"day": 5, "topic": "React best practices", "type": "guide"},
+          {"day": 7, "topic": "DevOps pipelines", "type": "technical"}
+        ],
+        "priorities": [
+          "AI automation tools (high traffic potential)",
+          "Python web scraping (tutorial demand)",
+          "React best practices (evergreen content)"
+        ]
+      }
+    },
+    {
+      "test_name": "monthly_content_strategy",
+      "input": {
+        "topics": [
+          "Machine learning basics",
+          "Cloud architecture",
+          "Security best practices"
+        ],
+        "timeline": "next 30 days"
+      },
+      "expected_output": {
+        "editorial_calendar": [
+          {"week": 1, "topics": ["Machine learning basics"], "formats": ["series"]},
+          {"week": 2, "topics": ["Cloud architecture"], "formats": ["guide", "video"]},
+          {"week": 3, "topics": ["Security best practices"], "formats": ["checklist"]},
+          {"week": 4, "topics": ["Review and roundup"], "formats": ["compilation"]}
+        ],
+        "priorities": [
+          "Machine learning series",
+          "Cloud architecture guide",
+          "Security checklist"
+        ]
+      }
+    },
+    {
+      "test_name": "minimal_planning",
+      "input": {
+        "topics": ["Quick news update"],
+        "timeline": "today"
+      },
+      "expected_output": {
+        "editorial_calendar": [
+          {"day": 0, "topic": "Quick news update", "type": "news"}
+        ],
+        "priorities": ["Immediate publication"]
+      }
+    }
+  ],
+  "angle-definer": [
+    {
+      "test_name": "technical_angle_definition",
+      "input": {
+        "topic": "Kubernetes deployment",
+        "research": {
+          "competitors": "Many basic tutorials exist",
+          "gaps": "Production-ready examples lacking",
+          "audience": "Senior developers"
+        }
+      },
+      "expected_output": {
+        "unique_angle": "Production-grade Kubernetes with real-world edge cases",
+        "perspective": "Battle-tested engineer sharing war stories",
+        "differentiation": "Focus on what goes wrong and how to fix it"
+      }
+    },
+    {
+      "test_name": "beginner_friendly_angle",
+      "input": {
+        "topic": "Git basics",
+        "research": {
+          "competitors": "Complex technical documentation",
+          "gaps": "Visual learners underserved",
+          "audience": "New developers"
+        }
+      },
+      "expected_output": {
+        "unique_angle": "Git explained through visual metaphors",
+        "perspective": "Patient mentor guiding first-timers",
+        "differentiation": "No command line for first 3 lessons"
+      }
+    },
+    {
+      "test_name": "controversial_angle",
+      "input": {
+        "topic": "Microservices vs Monoliths",
+        "research": {
+          "competitors": "Pro-microservices content dominates",
+          "gaps": "Balanced perspective missing",
+          "audience": "Architects and CTOs"
+        }
+      },
+      "expected_output": {
+        "unique_angle": "Why we moved back to a monolith and saved $1M",
+        "perspective": "CTO who's been on both sides",
+        "differentiation": "Real cost and complexity analysis"
+      }
+    }
+  ],
+  "audience-profiler": [
+    {
+      "test_name": "developer_audience_profile",
+      "input": {
+        "content_type": "technical tutorial",
+        "topic": "REST API development"
+      },
+      "expected_output": {
+        "target_audience": {
+          "level": "intermediate",
+          "role": "backend developer",
+          "experience": "2-5 years",
+          "tech_stack": ["Node.js", "Python", "Java"]
+        },
+        "pain_points": [
+          "Authentication complexity",
+          "Error handling patterns",
+          "Testing strategies"
+        ],
+        "interests": [
+          "Best practices",
+          "Performance optimization",
+          "Security"
+        ]
+      }
+    },
+    {
+      "test_name": "business_audience_profile",
+      "input": {
+        "content_type": "thought leadership",
+        "topic": "AI transformation"
+      },
+      "expected_output": {
+        "target_audience": {
+          "level": "executive",
+          "role": "decision maker",
+          "experience": "C-suite",
+          "industry": ["tech", "finance", "retail"]
+        },
+        "pain_points": [
+          "ROI uncertainty",
+          "Implementation costs",
+          "Change management"
+        ],
+        "interests": [
+          "Case studies",
+          "Cost savings",
+          "Competitive advantage"
+        ]
+      }
+    },
+    {
+      "test_name": "general_audience_profile",
+      "input": {
+        "content_type": "news",
+        "topic": "Tech industry update"
+      },
+      "expected_output": {
+        "target_audience": {
+          "level": "general",
+          "role": "tech enthusiast",
+          "experience": "varied",
+          "platforms": ["web", "mobile", "social"]
+        },
+        "pain_points": [
+          "Information overload",
+          "Technical jargon"
+        ],
+        "interests": [
+          "Industry trends",
+          "Product launches",
+          "Company news"
+        ]
+      }
+    }
+  ],
+  "spec-writer": [
+    {
+      "test_name": "comprehensive_blog_spec",
+      "input": {
+        "topic": "Building scalable microservices",
+        "angle": "Lessons from scaling to 1M users",
+        "audience": {
+          "level": "senior",
+          "role": "architect"
+        }
+      },
+      "expected_output": {
+        "specification": {
+          "title": "Building Scalable Microservices: Lessons from 1M Users",
+          "word_count": 2500,
+          "sections": [
+            "Introduction: The scaling challenge",
+            "Architecture evolution timeline",
+            "Key design decisions",
+            "Implementation patterns",
+            "Monitoring and observability",
+            "Lessons learned"
+          ],
+          "tone": "authoritative yet approachable",
+          "style": "technical with real examples"
+        },
+        "requirements": [
+          "Include architecture diagrams",
+          "Provide code examples",
+          "Add performance metrics",
+          "Include cost analysis"
+        ],
+        "deliverables": [
+          "Main article (2500 words)",
+          "Code repository",
+          "Architecture diagrams",
+          "Summary infographic"
+        ]
+      }
+    },
+    {
+      "test_name": "tutorial_specification",
+      "input": {
+        "topic": "React hooks tutorial",
+        "angle": "Learn by building a todo app",
+        "audience": {
+          "level": "beginner",
+          "role": "frontend developer"
+        }
+      },
+      "expected_output": {
+        "specification": {
+          "title": "Master React Hooks by Building a Todo App",
+          "word_count": 3000,
+          "sections": [
+            "Prerequisites",
+            "Project setup",
+            "useState basics",
+            "useEffect patterns",
+            "Custom hooks",
+            "Final project"
+          ],
+          "tone": "friendly and encouraging",
+          "style": "step-by-step with explanations"
+        },
+        "requirements": [
+          "Incremental code examples",
+          "Common mistakes section",
+          "Interactive demos",
+          "Exercise challenges"
+        ],
+        "deliverables": [
+          "Tutorial article",
+          "Complete code",
+          "Exercise solutions",
+          "Video walkthrough"
+        ]
+      }
+    },
+    {
+      "test_name": "news_article_spec",
+      "input": {
+        "topic": "Major tech acquisition",
+        "angle": "Impact on developers",
+        "audience": {
+          "level": "general",
+          "role": "tech professional"
+        }
+      },
+      "expected_output": {
+        "specification": {
+          "title": "Breaking: Tech Acquisition and What It Means for Developers",
+          "word_count": 800,
+          "sections": [
+            "The announcement",
+            "Key details",
+            "Developer impact",
+            "Industry analysis",
+            "What's next"
+          ],
+          "tone": "informative and timely",
+          "style": "journalistic"
+        },
+        "requirements": [
+          "Fact-checked information",
+          "Expert quotes",
+          "Timeline of events",
+          "Related links"
+        ],
+        "deliverables": [
+          "News article",
+          "Social media posts",
+          "Email newsletter snippet"
+        ]
+      }
+    }
+  ],
+  "template-selector": [
+    {
+      "test_name": "blog_post_template",
+      "input": {
+        "content_type": "blog",
+        "spec": {
+          "sections": 6,
+          "style": "technical",
+          "includes_code": true
+        }
+      },
+      "expected_output": {
+        "template": "technical-blog-with-code",
+        "structure": {
+          "intro": "Hook + Problem statement",
+          "body": "Solution with code examples",
+          "sections": [
+            "Problem deep dive",
+            "Solution approach",
+            "Implementation",
+            "Code walkthrough",
+            "Testing",
+            "Results"
+          ],
+          "conclusion": "Summary + Next steps"
+        }
+      }
+    },
+    {
+      "test_name": "tutorial_template",
+      "input": {
+        "content_type": "tutorial",
+        "spec": {
+          "sections": 8,
+          "style": "step-by-step",
+          "includes_exercises": true
+        }
+      },
+      "expected_output": {
+        "template": "interactive-tutorial",
+        "structure": {
+          "intro": "What you'll learn",
+          "prerequisites": "Required knowledge",
+          "sections": [
+            "Environment setup",
+            "Basic concepts",
+            "Hands-on practice",
+            "Advanced topics",
+            "Exercises",
+            "Solutions"
+          ],
+          "conclusion": "Review + Resources"
+        }
+      }
+    },
+    {
+      "test_name": "news_template",
+      "input": {
+        "content_type": "news",
+        "spec": {
+          "sections": 3,
+          "style": "breaking",
+          "urgency": "high"
+        }
+      },
+      "expected_output": {
+        "template": "breaking-news",
+        "structure": {
+          "headline": "Attention-grabbing",
+          "lead": "Key facts first",
+          "body": "Details and context",
+          "sections": [
+            "What happened",
+            "Why it matters",
+            "What's next"
+          ],
+          "footer": "Related stories"
+        }
+      }
+    }
+  ]
+}
