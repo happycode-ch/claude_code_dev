@@ -281,6 +281,13 @@ Spec → Agent Selection → Execution → Validation → Handoff
 - Reports completion status upstream
 - Integrates with other category subagents
 
+### With Specialized Implementations
+#### Optimized Pipeline Implementation
+@./content_creation_subagents/content_subagent_files/CLAUDE.md
+- 41 production-ready subagents
+- 9-phase pipeline execution
+- Detailed operational procedures
+
 ### With External Systems
 - Publishing platforms via API
 - Analytics tools for metrics
